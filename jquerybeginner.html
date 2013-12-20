@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Beginner Assignment</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <!-- <script type="text/javascript" src="jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="jquerybeginner.css">
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		console.log(document);
+    		console.dir(document);
+    		console.log("ready");
+    		$('#fancy_click').click(function(){
+				$('#boring').addClass("fancy");
+    			$('#boring').text("Fancy Text");
+    		});
+
+    		$('#boring_click').click(function(){
+    			$('#boring').removeClass("fancy");
+    			$('#boring').text("Boring Text");
+    		});
+
+    		$('#clone').click(function(){
+    			$('#clone_machine').after("<img class='ron' src='assets/img/ron_left.png' height='30'>");
+    		});
+
+    		$('#clone_2').click(function(){
+    			$('#clone_machine').append("<img class='ron' src='assets/img/ron_right.png' height='30'>");
+    		});
+
+    		$('#embiggen').click(function(){
+    			$('.ron').attr('height', '100');
+    		});
+
+    		$('#banner').click(function(){
+    			$('.bruce_contain').slideDown();
+    			// $('#banner').attr('class', 'btn btn-info');
+    			console.log("banner click");
+    			$('#remove_banner').html("to remove Banner from");
+    			$('#banner').hide();
+    			$('#close_banner').fadeIn();
+    		});
+
+    		$('#close_banner').click(function(){
+    			$('.bruce_contain').slideUp();
+    			$('#close_banner').hide();
+    			$('#banner').fadeIn();
+    			$('#remove_banner').text("to add Banner");
+    		});
+
+    		$('#destroy').click(function(){
+    			$(".ron").slideUp(2000);
+    		});
+
+            $('#give_up').click(function(){
+                $('input:text').val("Ulysses");
+                event.preventDefault();
+            });
+
+            $('#hint').click(function(){
+                $('#hint').toggle(function(){
+                    $('.hint_guy').animate({left:50, opacity:"show"}, 1300);
+                });
+            });
+
+            $('input').one("focus", function(){
+                $('.ronquote').fadeIn(1000).delay(3000);
+            });
+
+            $('input').on("blur", function(){
+                $('.ronquote').fadeOut(4000);
+            });
+
+
+
+            // $('#trivia').submit(function(){
+            //     var midname = (document.getElementById('#mname').value).toUpperCase();
+            //     if(midname==="ULYSSES"){
+            //         alert("Correct");
+            //         console.log("true");
+                                      
+            //     } else {
+            //         alert("Wrong");
+            //         console.log("false");          
+            //     };
+            //     event.preventDefault();
+            // });
+            
+            $('#trivia').submit(function(){
+                console.log($(this).serialize());
+                var midname = (document.getElementById('#mname').value).toUpperCase();
+                if(midname==="ULYSSES"){
+                    $('#rightness').show().delay(3000).fadeOut();
+                    console.log("true");                             
+                } else {
+                    $('#wrongness').show().delay(3000).fadeOut();
+                    console.log("false");          
+                };
+                event.preventDefault();
+            });
+
+            $('.wiz1').click(function(){
+                $(this).text("Gandalf");
+                $('#gdalf').slideToggle();
+            });
+
+            $('.wiz2').click(function(){
+                $(this).text("Merlin");
+                $('#mlin').slideToggle();
+            });
+
+            $('.wiz3').click(function(){
+                $(this).text("John Wall");
+                $('#jwall').slideToggle();
+            });
+
+
+
+
+    	})
+
+
+    	
+    </script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="magic">jQuery Magic</h1>
+		</div>
+		<div class='bruce_contain'><img class='bruce' src='assets/img/banner.jpg'>
+		</div>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span class="sr-only">10% Complete</span>
+            </div>
+        </div>
+		<p id="boring">Boring Text</p>
+		<button id="fancy_click" class="btn btn-primary">Fancify</button>
+		<button id="boring_click" class="btn btn-default">Bore-ify</button>
+		<hr class="hline">
+        <div id="clone_machine">
+			<div class="row">
+				<h3>Ron Swanson Clone Machine</h3>
+				<button id="clone_2" class="col-md-4 btn btn-info">Clone happy Ron</button>
+				<button id="clone" class="col-md-4 btn btn-info">Clone mad Ron</button>
+			</div>
+			<div class="row">
+				<button id="embiggen" class="col-md-8 btn btn-warning btn-lg">Embiggen Rons</button>
+			</div>
+			<div class="row">
+				<button id="destroy" class="col-md-8 btn btn-danger">DESTROY ALL RONS</button>
+			</div>
+		</div>
+        <hr class="hline">
+		<div class="row">
+            <div class="col-md-5 trivia">
+                <h3>Trivia:</h3>
+        		<h4>What is Ronald Swanson's middle name:</h4>
+        		<form id="trivia">
+        			<p><input id="#mname" type="text" size="32" name="middle_name"><span id="wrongness" class="label label-danger">Wrong</span><span id="rightness" class="label label-success">Correct!</span></p>
+        			<input type="submit" class="btn btn-default submitter" value="Submit">
+                </form>
+                <button id="hint" class="btn btn-default submitter">Hint</button>
+                <button id="give_up" class="btn btn-default submitter">Give Up?</button>
+            </div>
+            <div class="col-md-7">
+                <div class="col-md-12 hint_guy">
+                    <h3>Hint:</h3>
+                    <blockquote class="joyce">
+                        <p>“Think you're escaping and run into yourself. Longest way round is the shortest way home.”</p>
+                    </blockquote>
+                </div>
+                <div class="ronquote">
+                    <h3>Quote</h3>
+                    <blockquote class="joyce">
+                        <p>"When I eat, it is the food that is scared."</p>
+                        <small>Ron Swanson</small>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    	<hr>
+        <h4 id="banner_head">Click <button id="banner" class="btn btn-success">HERE</button><button id="close_banner" class="btn btn-success">HERE</button> <span id="remove_banner">to add Banner</span> to the top of the page</h4>
+        <hr>
+        
+        <div class="row bottom">  
+            <div class="col-md-3 wiz_btns">
+                <h3 id="wizards">Wizard Cameos</h3>                
+                <p><button type="button" class="btn btn-primary btn-lg wiz1">Wizard One</button></p>
+                <p><button type="button" class="btn btn-primary btn-lg wiz2">Wizard Two</button></p>
+    		    <p><button type="button" class="btn btn-primary btn-lg wiz3">Wizard Three</button></p>
+                
+            </div>
+            <div class="col-md-8 img_box">
+                <div class="img_div gandalf">
+                    <img id="gdalf"src="assets/img/gandalf.png" alt="Gandalf">
+                </div>
+                <div class="img_div merlin">
+                    <img id="mlin" src="assets/img/merlin.png" alt="Merlin">
+                </div>
+                <div class="img_div john">
+                    <img id="jwall" src="assets/img/john.png" alt="John Wall">
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+ 
+</body>
+</html>

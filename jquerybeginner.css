@@ -1,0 +1,185 @@
+.container{
+	width: 960px;
+	margin: 0px auto;
+	/*border: 1px solid black;*/
+}
+
+button{
+	margin: 2px;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(http://themes.googleusercontent.com/static/fonts/pacifico/v4/yunJt0R8tCvMyj_V4xSjaXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+
+h3{
+	font-family: 'Pacifico', futura sans-serif;
+}
+
+li{
+	font-family: 'Futura', sans-serif;
+}
+
+#gdalf, #mlin, #jwall{
+	display: none;
+}
+
+.trivia{
+	/*border: 1px solid black;*/
+}
+
+#trivia{
+	display: inline;
+}
+
+.bottom img{
+	width: 200px;
+	height: auto;
+}
+
+.wiz{
+	/*margin-bottom: 17px;*/
+}
+
+.wiz_btns{
+	border-right: 1px solid #EEEEEE;
+	margin-right: 22px;
+	padding-right: 0px;
+	text-align: center;
+}
+
+.img_box{
+	vertical-align: top;
+
+}
+
+.img_div{
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+.hint_guy{
+	display: none;
+	margin-left: -70px;
+}
+
+.ronquote{
+	display: none;
+	margin-left: -4px;
+}
+
+.magic{
+	font-family: 'Pacifico', futura, sans-serif;
+}
+
+.fancy{
+	font-size: 35px;
+	font-family: 'Pacifico', cursive;
+	color: violet;
+  	text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+	/*color: orange;*/
+	font-style: oblique;
+	margin-bottom: 15px;
+}
+
+.joyce{
+	font-style: oblique;
+}
+
+#wizards{
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.bottom{
+	margin-bottom: 50px;
+}
+
+#clone{
+	width: 176px;
+	margin-bottom: 4px;
+	margin-left: 0px;
+}
+
+#clone_2{
+	margin-bottom: 4px;
+	width: 176px;
+	margin-right: 4px;
+
+}
+
+.ron{
+	margin: 3px;
+}
+
+#clone_machine{
+	margin-left: 15px;
+	width: 800px;
+	/*border: 1px black solid;*/
+}
+
+
+#close_banner{
+	display: none;
+	background-color: purple;
+	border: 1px solid purple;	
+}
+
+#close_banner:hover{
+	background-color: #6B006B;
+}
+
+#embiggen{
+	/*margin-left: 15px; */
+	height: 100px;
+	width: 357px;
+	margin-top: 0px;
+	margin-bottom: 4px;
+}
+
+#destroy{
+	width: 357px;
+	margin-bottom: 5px;
+}
+
+#wrongness, #rightness{
+	margin-left: 5px;
+	display: none;
+}
+
+
+.submitter{
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.bruce{
+	margin: 0px;
+	padding: 0px;
+	width: 930px;
+}
+
+.bruce_contain{
+	height: 200px;
+	width: 960px;
+	overflow: scroll;
+	display: none;
+	margin-bottom: 15px;
+}
+
+.hline{
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
